@@ -1,38 +1,32 @@
 
-import Categories from './Components/Categories/Categories.Component.jsx'
+import Home from './routes/home/homes.component'
+import {Routes, Route} from 'react-router-dom'
+import Navigation from './Components/navigation/navigation.component'
+import SignIn from './Components/sign-in/sign-in.componenet'
+
+const Hello=() => {
+  
+  return (
+    
+    <h2>Hello Mr.Chanda </h2>
+    
+    
+  )
+}
+
 
 const App = () => {
-  const categories =[
-    {
-      "id": 1,
-      "title": "hats",
-      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-    },
-    {
-      "id": 2,
-      "title": "jackets",
-      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-    },
-    {
-      "id": 3,
-      "title": "sneakers",
-      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-    },
-    {
-      "id": 4,
-      "title": "womens",
-      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-    },
-    {
-      "id": 5,
-      "title": "mens",
-      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-    }
-  ]
+ 
   return (
-    <div >
-      <Categories categories = {categories}/>
-    </div>
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />}/>
+        <Route path='hello' element={<Hello/>}/>
+        <Route path='signIn' element={<SignIn/>}/>
+      </Route>
+    </Routes>
+      
+    
   );
 }
 
